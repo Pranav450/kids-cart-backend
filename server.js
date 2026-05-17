@@ -20,7 +20,51 @@ app.get("/products", async (req, res) => {
     const products = await Product.find();
     res.json(products);
 });
+// Add default products to database (run once)
+app.get("/seed", async (req, res) => {
+    try {
 
+        const existingProducts = await Product.find();
+
+        if (existingProducts.length > 0) {
+            return res.json({
+                message: "Products already exist"
+            });
+        }
+
+        const products = [
+            {
+                name: "Kids Hoodie",
+                price: 999,
+                image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=700",
+                stock: 100
+            },
+            {
+                name: "Girls Dress",
+                price: 1499,
+                image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700",
+                stock: 100
+            },
+            {
+                name: "Kids Shoes",
+                price: 1999,
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700",
+                stock: 100
+            }
+        ];
+
+        await Product.insertMany(products);
+
+        res.json({
+            message: "Products added successfully"
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
+});
 // Place order (reduce inventory)
 app.post("/order/:id", async (req, res) => {
     try {
