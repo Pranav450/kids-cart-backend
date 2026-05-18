@@ -30,16 +30,19 @@ app.get("/seed", async (req, res) => {
         name: "Toy Car",
         price: 200,
         stock: 10,
+        image: "https://via.placeholder.com/150"
       },
       {
         name: "Teddy Bear",
         price: 500,
         stock: 8,
+        image: "https://via.placeholder.com/150"
       },
       {
         name: "Lego Set",
         price: 1200,
         stock: 5,
+        image: "https://via.placeholder.com/150"
       },
     ]);
 
