@@ -30,19 +30,19 @@ app.get("/seed", async (req, res) => {
         name: "Toy Car",
         price: 200,
         stock: 10,
-        image: "https://via.placeholder.com/150"
+        image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=700"
       },
       {
         name: "Teddy Bear",
         price: 500,
         stock: 8,
-        image: "https://via.placeholder.com/150"
+        image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=700"
       },
       {
         name: "Lego Set",
         price: 1200,
         stock: 5,
-        image: "https://via.placeholder.com/150"
+        image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=700"
       },
     ]);
 
